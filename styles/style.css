@@ -34,14 +34,57 @@ main .card {
   }
 }
 
-main .card img {
+main .card .image-container {
+  position: relative;
+}
+
+main .card .image-container .equilibrium, main .card .image-container .overlay {
+  cursor: pointer;
   width: 100%;
   border-radius: 0.75rem;
+}
+
+main .card .image-container .overlay {
+  width: 100%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+}
+
+main .card .image-container .overlay img {
+  width: 0;
+}
+
+main .card .image-container .overlay:hover img,
+main .card .image-container .overlay:focus img {
+  width: 20%;
+}
+
+main .card .image-container .overlay:hover,
+main .card .image-container .overlay:focus {
+  background: rgba(0, 255, 247, 0.5);
 }
 
 main .card h1 {
   color: white;
   font-weight: 600;
+  cursor: pointer;
+}
+
+main .card h1:hover,
+main .card h1:focus {
+  color: #00fff7;
 }
 
 main .card .paragraph, main .card .symbol-container .time-left p, main .card .author-container p {
@@ -124,5 +167,16 @@ main .card .author-container p {
 
 main .card .author-container p span {
   color: white;
+  cursor: pointer;
+}
+
+main .card .author-container p span:hover,
+main .card .author-container p span:focus {
+  color: #00fff7;
+}
+
+footer {
+  background: #0d192b;
+  color: #2f415b;
 }
 /*# sourceMappingURL=style.css.map */
