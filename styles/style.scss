@@ -28,14 +28,56 @@ main {
         @include breakpoint(mobile) {
             width: 90%;
         }
-        
-        img {
-            width: 100%;
-            border-radius: 0.75rem;
+        .image-container {
+            position: relative;
+            .equilibrium {
+                cursor: pointer;
+                width: 100%;
+                border-radius: 0.75rem;
+
+            }
+            // .equilibrium:hover .overlay {
+            //     width: 100%;
+            //     transition: 5s;
+            // }
+
+            .overlay {
+                @extend .equilibrium;
+                width: 100%;
+                aspect-ratio: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: transparent;
+                img {
+                    width: 0;
+                }
+            }
+
+            .overlay:hover img,
+            .overlay:focus img {
+                width: 20%;                
+            }
+            .overlay:hover,
+            .overlay:focus {
+                background: $primaryCyanOpaque;                           
+            }
+            // img:hover {
+            //     background-image: url("/images/icon-view.svg"), linear-gradient($primaryCyanOpaque,$primaryCyanOpaque), url("/images/image-equilibrium.jpg");
+            // }
         }
+        
         h1 {
             color: $white;
             font-weight: 600;
+            cursor: pointer;
+        }
+        h1:hover,
+        h1:focus {
+            color: $primaryCyan;
         }
         .paragraph {
             font-size: $paragraph-size;
@@ -97,9 +139,19 @@ main {
 
                 span {
                     color: $white;
+                    cursor: pointer;
+                }
+
+                span:hover,
+                span:focus {
+                    color: $primaryCyan;
                 }
 
             }
         }
     }
+}
+footer {
+    background: $main-bg;
+    color: $line;
 }
